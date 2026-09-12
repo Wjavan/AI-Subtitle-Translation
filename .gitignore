@@ -1,0 +1,42 @@
+# PotPlayer AI Subtitle Translation Repository
+
+# Configuration files (may contain sensitive information)
+*.cfg
+*.ini
+*.json
+*.xml
+*.conf
+
+# User settings and cache
+user_settings/
+cache/
+temp/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Logs
+*.log
+logs/
+
+# PotPlayer specific
+potplayer.ini
+PotPlayer settings/
+
+# Backup files
+*.bak
+*.backup
