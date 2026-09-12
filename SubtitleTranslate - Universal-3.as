@@ -57,7 +57,6 @@ string GetPasswordText() {
          + "{$CP0=API Key:$}";
 }
 
-// Global Variables
 // Pre-configured values (auto-filled by installer)
 string GPT_pre_api_key = ""; // will be replaced during installation
 string GPT_pre_selected_model = "qwen-flash"; // will be replaced during installation
@@ -1055,7 +1054,6 @@ string FormatFailureTranslation(const string &in rawResponse, const string &in f
     return GPT_CTX_TRANSLATION_FAILURE_WARNING_PREFIX + detail;
 }
 
-// Plugin Initialization
 void OnInitialize() {
     HostPrintUTF8("AI translation plugin loaded.\n");
     RefreshConfiguration();
@@ -1066,7 +1064,6 @@ void OnInitialize() {
     }
 }
 
-// Plugin Finalization
 void OnFinalize() {
     HostPrintUTF8("AI translation plugin unloaded.\n");
 }
