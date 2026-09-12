@@ -1,5 +1,4 @@
-<h1 align="center">PotPlayer AI Subtitle Translation</h1>
-<p align="center"><strong>PotPlayer AI 字幕翻译</strong></p>
+<h1 align="center">PotPlayer AI Subtitle Translation<br>PotPlayer AI 字幕翻译</h1>
 
 <div align="center">
   <img width="256" height="256" alt="SubtitleTranslate" src="https://github.com/user-attachments/assets/0ae6c19f-d276-4a85-8a14-c4f682a75322" />
@@ -9,9 +8,7 @@ A powerful AngelScript plugin for PotPlayer that provides real-time subtitle tra
 
 > 一款强大的 PotPlayer AngelScript 插件，可调用任意 OpenAI 兼容的 LLM API 实现字幕实时翻译。
 
-## Features
-
-## 功能特性
+<h2>Features<br>功能特性</h2>
 
 - **Multi-platform Support**: Compatible with Bailian, OpenAI, DeepSeek, GLM, Moonshot, Gemini, Ollama, and other OpenAI-compatible APIs
 - **Real-time Translation**: Instant subtitle translation with minimal token usage
@@ -27,9 +24,7 @@ A powerful AngelScript plugin for PotPlayer that provides real-time subtitle tra
 > - **多语言**：支持 80+ 种语言，可自动识别源语言
 > - **错误处理**：健壮的重试机制与幻觉检测
 
-## Installation
-
-## 安装
+<h2>Installation<br>安装</h2>
 
 1. Download the plugin files:
    - `SubtitleTranslate - Universal.as` - Main plugin file
@@ -49,9 +44,7 @@ A powerful AngelScript plugin for PotPlayer that provides real-time subtitle tra
 >    ```
 > 3. 重启 PotPlayer
 
-## Configuration
-
-## 配置
+<h2>Configuration<br>配置</h2>
 
 1. Open PotPlayer and go to Preferences → Subtitles → Subtitle Translation
 2. Configure your API settings:
@@ -73,37 +66,27 @@ A powerful AngelScript plugin for PotPlayer that provides real-time subtitle tra
 >    - **上下文行数**：用作上下文的前序字幕条数
 >    - **缓存模式**：上下文缓存模式（auto/off）
 
-### Configuration Examples
+<h3>Configuration Examples<br>配置示例</h3>
 
-### 配置示例
-
-#### OpenAI Official API
-
-#### OpenAI 官方 API
+<h4>OpenAI Official API<br>OpenAI 官方 API</h4>
 
 ```
 gpt-4|https://api.openai.com/v1/chat/completions|your-api-key|0|0|3|auto
 ```
 
-#### Alibaba Cloud Bailian (DashScope)
-
-#### 阿里云百炼（DashScope）
+<h4>Alibaba Cloud Bailian (DashScope)<br>阿里云百炼（DashScope）</h4>
 
 ```
 qwen-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions|your-api-key|500|retry1|3|auto
 ```
 
-#### DeepSeek
-
-#### DeepSeek
+<h4>DeepSeek</h4>
 
 ```
 deepseek-chat|https://api.deepseek.com/v1/chat/completions|your-api-key|0|0|3|auto
 ```
 
-## Supported APIs
-
-## 支持的 API
+<h2>Supported APIs<br>支持的 API</h2>
 
 - **OpenAI**: Official OpenAI API
 - **Alibaba Cloud**: Bailian/DashScope
@@ -125,53 +108,41 @@ deepseek-chat|https://api.deepseek.com/v1/chat/completions|your-api-key|0|0|3|au
 > - **Ollama**：本地模型
 > - **自定义**：任意 OpenAI 兼容端点
 
-## Advanced Features
+<h2>Advanced Features<br>高级特性</h2>
 
-## 高级特性
-
-### Context Caching
+<h3>Context Caching<br>上下文缓存</h3>
 
 - Reduces token usage by caching translation context
 - Automatically falls back to standard chat when caching is unsupported
 
-### 上下文缓存
-
 > - 通过缓存翻译上下文降低 token 消耗
 > - 缓存不受支持时自动回退到标准对话模式
 
-### Prompt Caching (OpenAI Official)
+<h3>Prompt Caching (OpenAI Official)<br>提示词缓存（OpenAI 官方）</h3>
 
 - Extends prompt cache retention (24h/in-memory)
 - Reduces costs for repeated translations
 
-### 提示词缓存（OpenAI 官方）
-
 > - 延长提示词缓存保留时间（24h/内存中）
 > - 降低重复翻译成本
 
-### Hallucination Detection
+<h3>Hallucination Detection<br>幻觉检测</h3>
 
 - Detects and retries overlong translations
 - Prevents model output that's excessively long
 
-### 幻觉检测
-
 > - 检测并重试过长的翻译结果
 > - 防止模型输出异常冗长的内容
 
-### Echo Detection
+<h3>Echo Detection<br>回显检测</h3>
 
 - Detects when models echo input text instead of translating
 - Automatically retries with improved prompts
 
-### 回显检测
-
 > - 检测模型回显原文而非翻译的情况
 > - 自动以优化后的提示词重试
 
-## Language Support
-
-## 语言支持
+<h2>Language Support<br>语言支持</h2>
 
 Supports 80+ languages including:
 - Chinese (Simplified/Traditional)
@@ -185,9 +156,7 @@ Supports 80+ languages including:
 > - 阿拉伯语、俄语、葡萄牙语、意大利语等
 > - 未知源语言自动识别
 
-## Usage Tips
-
-## 使用建议
+<h2>Usage Tips<br>使用建议</h2>
 
 1. **Start with small context** (1-3 lines) to minimize token usage
 2. **Use appropriate models** for your language pairs
@@ -201,25 +170,19 @@ Supports 80+ languages including:
 > 4. **监控 token 用量**以控制成本
 > 5. 长视频**使用上下文缓存**
 
-## Contributing
-
-## 参与贡献
+<h2>Contributing<br>参与贡献</h2>
 
 This project is forked from [Felix3322/PotPlayer_ChatGPT_Translate](https://github.com/Felix3322/PotPlayer_ChatGPT_Translate) and enhanced with additional features.
 
 > 本项目 fork 自 [Felix3322/PotPlayer_ChatGPT_Translate](https://github.com/Felix3322/PotPlayer_ChatGPT_Translate)，并在此基础上增强了更多功能。
 
-## License
-
-## 许可证
+<h2>License<br>许可证</h2>
 
 GPL-3.0 License - see [LICENSE](LICENSE) file for details.
 
 > GPL-3.0 许可证 - 详见 [LICENSE](LICENSE) 文件。
 
-## Support
-
-## 支持
+<h2>Support<br>支持</h2>
 
 If you encounter any issues or have feature requests, please open an issue in the GitHub repository.
 
