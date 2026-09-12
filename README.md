@@ -18,8 +18,8 @@ A powerful AngelScript plugin for PotPlayer that provides real-time subtitle tra
 ## Installation
 
 1. Download the plugin files:
-   - `SubtitleTranslate - Universal-3.as` - Main plugin file
-   - `SubtitleTranslate_-_Universal_b1a211.ico` - Plugin icon
+   - `SubtitleTranslate - Universal.as` - Main plugin file
+   - `SubtitleTranslate - Universal.ico` - Plugin icon
 
 2. Place the files in your PotPlayer scripts directory:
    ```
@@ -102,21 +102,6 @@ Supports 80+ languages including:
 3. **Enable retry mode** for unstable network conditions
 4. **Monitor token usage** to control costs
 5. **Use context caching** for long videos
-
-## Troubleshooting
-
-### Common Issues
-
-1. **API Key Error**: Verify your API key and endpoint URL
-2. **Model Not Found**: Check if your model is available on the selected API
-3. **Network Timeout**: Increase delay or enable retry mode
-4. **Poor Translation Quality**: Adjust context lines or try different models
-
-### Error Messages
-
-- `[Translation failed - please share a screenshot with the developer]`: Translation failed, check API settings
-- `Echo detected`: Model returned source text, retrying with improved prompt
-- `Hallucination detected`: Translation is too long, retrying
 
 ## Contributing
 
