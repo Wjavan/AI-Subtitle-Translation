@@ -1,4 +1,5 @@
 <h1 align="center">PotPlayer AI Subtitle Translation</h1>
+<p align="center"><strong>PotPlayer AI 字幕翻译</strong></p>
 
 <div align="center">
   <img width="256" height="256" alt="SubtitleTranslate" src="https://github.com/user-attachments/assets/0ae6c19f-d276-4a85-8a14-c4f682a75322" />
@@ -6,7 +7,11 @@
 
 A powerful AngelScript plugin for PotPlayer that provides real-time subtitle translation using any OpenAI-compatible LLM API.
 
+> 一款强大的 PotPlayer AngelScript 插件，可调用任意 OpenAI 兼容的 LLM API 实现字幕实时翻译。
+
 ## Features
+
+## 功能特性
 
 - **Multi-platform Support**: Compatible with Bailian, OpenAI, DeepSeek, GLM, Moonshot, Gemini, Ollama, and other OpenAI-compatible APIs
 - **Real-time Translation**: Instant subtitle translation with minimal token usage
@@ -15,20 +20,38 @@ A powerful AngelScript plugin for PotPlayer that provides real-time subtitle tra
 - **Multiple Languages**: Supports 80+ languages with auto-detection
 - **Error Handling**: Robust retry mechanisms and hallucination detection
 
+> - **多平台支持**：兼容百炼、OpenAI、DeepSeek、GLM、Moonshot、Gemini、Ollama 及其他 OpenAI 兼容 API
+> - **实时翻译**：字幕即时翻译，token 消耗极低
+> - **上下文感知**：利用前序字幕作为上下文，提升翻译质量
+> - **高级缓存**：支持上下文缓存与提示词缓存，优化性能
+> - **多语言**：支持 80+ 种语言，可自动识别源语言
+> - **错误处理**：健壮的重试机制与幻觉检测
+
 ## Installation
+
+## 安装
 
 1. Download the plugin files:
    - `SubtitleTranslate - Universal.as` - Main plugin file
    - `SubtitleTranslate - Universal.ico` - Plugin icon
-
 2. Place the files in your PotPlayer scripts directory:
    ```
    PotPlayer\Scripts\
    ```
-
 3. Restart PotPlayer
 
+> 1. 下载插件文件：
+>    - `SubtitleTranslate - Universal.as` - 插件主文件
+>    - `SubtitleTranslate - Universal.ico` - 插件图标
+> 2. 将文件放入 PotPlayer 脚本目录：
+>    ```
+>    PotPlayer\Scripts\
+>    ```
+> 3. 重启 PotPlayer
+
 ## Configuration
+
+## 配置
 
 1. Open PotPlayer and go to Preferences → Subtitles → Subtitle Translation
 2. Configure your API settings:
@@ -40,24 +63,47 @@ A powerful AngelScript plugin for PotPlayer that provides real-time subtitle tra
    - **Context Lines**: Number of previous subtitle entries to use as context
    - **Cache Mode**: Context caching mode (auto/off)
 
+> 1. 打开 PotPlayer，进入 选项 → 字幕 → 字幕翻译
+> 2. 配置 API 参数：
+>    - **模型名称**：例如 `gpt-4`、`qwen-flash`、`claude-3-haiku`
+>    - **API 地址**：你的 API 端点 URL
+>    - **API 密钥**：你的 API 认证密钥
+>    - **延迟**：请求间隔毫秒数（可选）
+>    - **重试模式**：错误重试模式（0-3）
+>    - **上下文行数**：用作上下文的前序字幕条数
+>    - **缓存模式**：上下文缓存模式（auto/off）
+
 ### Configuration Examples
 
+### 配置示例
+
 #### OpenAI Official API
+
+#### OpenAI 官方 API
+
 ```
 gpt-4|https://api.openai.com/v1/chat/completions|your-api-key|0|0|3|auto
 ```
 
 #### Alibaba Cloud Bailian (DashScope)
+
+#### 阿里云百炼（DashScope）
+
 ```
 qwen-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions|your-api-key|500|retry1|3|auto
 ```
 
 #### DeepSeek
+
+#### DeepSeek
+
 ```
 deepseek-chat|https://api.deepseek.com/v1/chat/completions|your-api-key|0|0|3|auto
 ```
 
 ## Supported APIs
+
+## 支持的 API
 
 - **OpenAI**: Official OpenAI API
 - **Alibaba Cloud**: Bailian/DashScope
@@ -69,25 +115,63 @@ deepseek-chat|https://api.deepseek.com/v1/chat/completions|your-api-key|0|0|3|au
 - **Ollama**: Local models
 - **Custom**: Any OpenAI-compatible endpoint
 
+> - **OpenAI**：OpenAI 官方 API
+> - **阿里云**：百炼 / DashScope
+> - **百度**：文心一言
+> - **DeepSeek**：DeepSeek API
+> - **智谱 AI**：GLM 系列模型
+> - **Moonshot**：Moonshot API
+> - **Google**：Gemini API
+> - **Ollama**：本地模型
+> - **自定义**：任意 OpenAI 兼容端点
+
 ## Advanced Features
 
+## 高级特性
+
 ### Context Caching
+
 - Reduces token usage by caching translation context
 - Automatically falls back to standard chat when caching is unsupported
 
+### 上下文缓存
+
+> - 通过缓存翻译上下文降低 token 消耗
+> - 缓存不受支持时自动回退到标准对话模式
+
 ### Prompt Caching (OpenAI Official)
+
 - Extends prompt cache retention (24h/in-memory)
 - Reduces costs for repeated translations
 
+### 提示词缓存（OpenAI 官方）
+
+> - 延长提示词缓存保留时间（24h/内存中）
+> - 降低重复翻译成本
+
 ### Hallucination Detection
+
 - Detects and retries overlong translations
 - Prevents model output that's excessively long
 
+### 幻觉检测
+
+> - 检测并重试过长的翻译结果
+> - 防止模型输出异常冗长的内容
+
 ### Echo Detection
+
 - Detects when models echo input text instead of translating
 - Automatically retries with improved prompts
 
+### 回显检测
+
+> - 检测模型回显原文而非翻译的情况
+> - 自动以优化后的提示词重试
+
 ## Language Support
+
+## 语言支持
 
 Supports 80+ languages including:
 - Chinese (Simplified/Traditional)
@@ -95,7 +179,15 @@ Supports 80+ languages including:
 - Arabic, Russian, Portuguese, Italian, and more
 - Auto-detection for unknown source languages
 
+> 支持 80+ 种语言，包括：
+> - 中文（简体/繁体）
+> - 英语、西班牙语、法语、德语、日语、韩语
+> - 阿拉伯语、俄语、葡萄牙语、意大利语等
+> - 未知源语言自动识别
+
 ## Usage Tips
+
+## 使用建议
 
 1. **Start with small context** (1-3 lines) to minimize token usage
 2. **Use appropriate models** for your language pairs
@@ -103,14 +195,32 @@ Supports 80+ languages including:
 4. **Monitor token usage** to control costs
 5. **Use context caching** for long videos
 
+> 1. **从较小的上下文开始**（1-3 行），以最小化 token 消耗
+> 2. 为你的语言对**选择合适的模型**
+> 3. 网络不稳定时**开启重试模式**
+> 4. **监控 token 用量**以控制成本
+> 5. 长视频**使用上下文缓存**
+
 ## Contributing
+
+## 参与贡献
 
 This project is forked from [Felix3322/PotPlayer_ChatGPT_Translate](https://github.com/Felix3322/PotPlayer_ChatGPT_Translate) and enhanced with additional features.
 
+> 本项目 fork 自 [Felix3322/PotPlayer_ChatGPT_Translate](https://github.com/Felix3322/PotPlayer_ChatGPT_Translate)，并在此基础上增强了更多功能。
+
 ## License
+
+## 许可证
 
 GPL-3.0 License - see [LICENSE](LICENSE) file for details.
 
+> GPL-3.0 许可证 - 详见 [LICENSE](LICENSE) 文件。
+
 ## Support
 
+## 支持
+
 If you encounter any issues or have feature requests, please open an issue in the GitHub repository.
+
+> 如遇到任何问题或有功能需求，请在 GitHub 仓库提交 issue。
