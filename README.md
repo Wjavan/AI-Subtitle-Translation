@@ -1,5 +1,9 @@
 # PotPlayer AI Subtitle Translation
 
+<div align="center">
+  <img width="256" height="256" alt="SubtitleTranslate" src="https://github.com/user-attachments/assets/0ae6c19f-d276-4a85-8a14-c4f682a75322" />
+</div>
+
 A powerful AngelScript plugin for PotPlayer that provides real-time subtitle translation using any OpenAI-compatible LLM API.
 
 ## Features
