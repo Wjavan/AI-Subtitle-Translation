@@ -36,9 +36,3 @@ Thank you for your interest in contributing! 🎉
 - Files must be saved as **UTF-8 with BOM** and **CRLF line endings**
 - Test with multiple API providers if possible
 - Avoid breaking changes to the config string format
-
-## Code Style
-
-- Keep functions small and focused
-- Comment non-obvious logic
-- Maintain multilingual UI strings (KR, TW, CN, EN)

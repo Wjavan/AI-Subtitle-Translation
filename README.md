@@ -20,7 +20,7 @@ A powerful AngelScript plugin for PotPlayer that provides real-time subtitle tra
 
 ---
 
-## Why This Plugin? <br>为什么选择本插件？
+<h2>Why This Plugin?<br>为什么选择本插件？</h2>
 
 | Feature | Built-in Translators | This Plugin |
 |---------|---------------------|-------------|
@@ -44,7 +44,7 @@ A powerful AngelScript plugin for PotPlayer that provides real-time subtitle tra
 
 ---
 
-## Quick Start <br>快速开始
+<h2>Quick Start<br>快速开始</h2>
 
 1. Download `SubtitleTranslate - Universal.as` and `SubtitleTranslate - Universal.ico` from [Releases](https://github.com/Wjavan/AI-Subtitle-Translation/releases)
 2. Copy both files to your PotPlayer subtitle translate directory:
@@ -63,36 +63,14 @@ A powerful AngelScript plugin for PotPlayer that provides real-time subtitle tra
 >    ```
 >    *（根据你的 PotPlayer 安装位置调整盘符）*
 > 3. 完全重启 PotPlayer（必要时用任务管理器结束进程）
-> 4. 进入 **选项 → 字幕 → 字幕翻译**，选择"AI Translate"
+> 4. 进入 **选项 → 字幕 → 字幕翻译**，选择 "AI Translate"
 > 5. 输入你的 API 配置（见下方示例）
-
----
-
-<h2>Features<br>功能特性</h2>
-
-- **Multi-platform Support**: Compatible with Bailian, OpenAI, DeepSeek, GLM, Moonshot, Gemini, Ollama, and other OpenAI-compatible APIs
-- **Real-time Translation**: Instant subtitle translation with minimal token usage
-- **Context Awareness**: Uses previous subtitle entries as context for better translations
-- **Advanced Caching**: Supports context caching and prompt caching for improved performance
-- **Multiple Languages**: Supports 80+ languages with auto-detection
-- **Error Handling**: Robust retry mechanisms, hallucination detection, and echo detection
-- **Thinking Tag Support**: Compatible with reasoning models (`<think>` and `<reasoning>` tags)
-- **Multilingual UI**: Plugin UI supports Korean, Traditional Chinese, Simplified Chinese, and English
-
-> - **多平台支持**：兼容百炼、OpenAI、DeepSeek、GLM、Moonshot、Gemini、Ollama 及其他 OpenAI 兼容 API
-> - **实时翻译**：字幕即时翻译，token 消耗极低
-> - **上下文感知**：利用前序字幕作为上下文，提升翻译质量
-> - **高级缓存**：支持上下文缓存与提示词缓存，优化性能
-> - **多语言**：支持 80+ 种语言，可自动识别源语言
-> - **错误处理**：健壮的重试机制、幻觉检测及回显检测
-> - **思考标签支持**：兼容推理模型（`<think>` 和 `<reasoning>` 标签）
-> - **多语言界面**：插件界面支持韩语、繁体中文、简体中文和英语
 
 ---
 
 <h2>Configuration<br>配置</h2>
 
-### Config Format <br>配置格式
+### Config Format<br>配置格式
 
 The config string uses pipe-separated values:
 
@@ -106,9 +84,9 @@ Model|API_URL|nullkey|Delay_ms|Retry_mode|Context_lines|Cache_mode
 > 模型|API地址|nullkey|延迟ms|重试模式|上下文行数|缓存模式
 > ```
 
-### Configuration Examples <br>配置示例
+### Configuration Examples<br>配置示例
 
-<h4>Alibaba Cloud Bailian (Free Tier Available) <br>阿里云百炼（有免费额度）</h4>
+<h4>Alibaba Cloud Bailian (Free Tier Available)<br>阿里云百炼（有免费额度）</h4>
 
 ```
 qwen-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions|nullkey|500|retry1|3|auto
@@ -124,13 +102,13 @@ qwen-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions|nu
 deepseek-chat|https://api.deepseek.com/v1/chat/completions|nullkey|0|0|3|auto
 ```
 
-<h4>OpenAI Official API <br>OpenAI 官方 API</h4>
+<h4>OpenAI Official API<br>OpenAI 官方 API</h4>
 
 ```
 gpt-4o-mini|https://api.openai.com/v1/chat/completions|nullkey|0|0|3|auto
 ```
 
-<h4>Ollama (Local, Free) <br>Ollama（本地，免费）</h4>
+<h4>Ollama (Local, Free)<br>Ollama（本地，免费）</h4>
 
 ```
 qwen2.5:7b|http://localhost:11434/v1/chat/completions|nullkey|0|0|3|off
@@ -214,10 +192,10 @@ gemini-2.0-flash|https://generativelanguage.googleapis.com/v1beta/openai/chat/co
 
 <h3>Reasoning Model Support<br>推理模型支持</h3>
 
-- Automatically strips `<think>` and `<reasoning>` tags from model output
+- Automatically strips `ð¥` and `<reasoning>` tags from model output
 - Compatible with DeepSeek-R1, QwQ, and other reasoning models
 
-> - 自动剥离模型输出中的 `<think>` 和 `<reasoning>` 标签
+> - 自动剥离模型输出中的 `ð¥` 和 `<reasoning>` 标签
 > - 兼容 DeepSeek-R1、QwQ 等推理模型
 
 ---
@@ -260,7 +238,7 @@ Supports 80+ languages including:
 
 <h2>Troubleshooting<br>故障排除</h2>
 
-### Plugin not showing in PotPlayer <br>插件在 PotPlayer 中不显示
+### Plugin not showing in PotPlayer<br>插件在 PotPlayer 中不显示
 
 - Ensure files are named exactly: `SubtitleTranslate - Universal.as` and `SubtitleTranslate - Universal.ico`
 - The filenames **must match** (including the space around the hyphen)
@@ -272,7 +250,7 @@ Supports 80+ languages including:
 > - 通过任务管理器完全结束 PotPlayer 后重启
 > - 检查 AngelScript 控制台（`Ctrl+L`）是否有编译错误
 
-### Translation shows garbled text <br>翻译显示乱码
+### Translation shows garbled text<br>翻译显示乱码
 
 - This is a BOM (Byte Order Mark) issue — the `.as` file must have a single UTF-8 BOM
 - Re-download from [Releases](https://github.com/Wjavan/AI-Subtitle-Translation/releases) to get the correct file
@@ -282,7 +260,7 @@ Supports 80+ languages including:
 > - 从 [Releases](https://github.com/Wjavan/AI-Subtitle-Translation/releases) 重新下载正确文件
 > - 不要用会去除或重复 BOM 的编辑器修改 `.as` 文件
 
-### Translation shows original text (not translated) <br>显示原文而非翻译
+### Translation shows original text (not translated)<br>显示原文而非翻译
 
 - Check your API key and URL are correct
 - Verify the model name is supported by your API provider
@@ -294,7 +272,7 @@ Supports 80+ languages including:
 > - 检查网络能否访问 API 端点
 > - 如缓存导致问题，尝试设置 `cache=off`
 
-### API returns 401/403 <br>API 返回 401/403
+### API returns 401/403<br>API 返回 401/403
 
 - Ensure your API key is entered correctly in the password field
 - For OpenAI-compatible APIs, the key is sent as `Authorization: Bearer <key>`
