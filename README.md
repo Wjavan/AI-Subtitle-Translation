@@ -1,10 +1,6 @@
-# PotPlayer AI Subtitle Translation v1.0.0
+# PotPlayer AI Subtitle Translation
 
 A powerful AngelScript plugin for real-time subtitle translation in PotPlayer using any OpenAI-compatible LLM API.
-
-## What's New in v1.0.0
-
-This is the initial release of PotPlayer AI Subtitle Translation — a feature-rich, multi-platform subtitle translation plugin for PotPlayer players.
 
 ---
 
@@ -46,9 +42,9 @@ This is the initial release of PotPlayer AI Subtitle Translation — a feature-r
 1. Download both files from [Releases](https://github.com/Wjavan/AI-Subtitle-Translation/releases)
 2. Copy to your PotPlayer subtitle translate directory:
    ```
-   D:\PotPlayer\Extension\Subtitle\Translate\
+   ~\PotPlayer\Extension\Subtitle\Translate\
    ```
-3. **Completely restart PotPlayer** (kill via Task Manager)
+3. **Completely restart PotPlayer**
 4. Go to **Preferences → Subtitles → Subtitle Translation**, select **"AI Translate"**
 5. Enter your API config (examples below)
 
@@ -66,37 +62,37 @@ Model|API_URL|nullkey|Delay_ms|Retry_mode|Context_lines|Cache_mode
 
 | Provider | Config String |
 |----------|---------------|
-| **Alibaba Bailian** (qwen-flash) | `qwen-flash\|https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions\|nullkey\|500\|retry1\|3\|auto` |
+| **Alibaba Bailian** | `qwen-flash\|https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions\|nullkey\|500\|retry1\|3\|auto` |
 | **DeepSeek** | `deepseek-chat\|https://api.deepseek.com/v1/chat/completions\|nullkey\|0\|0\|3\|auto` |
 | **OpenAI** | `gpt-4o-mini\|https://api.openai.com/v1/chat/completions\|nullkey\|0\|0\|3\|auto` |
-| **Ollama** (local, free) | `qwen2.5:7b\|http://localhost:11434/v1/chat/completions\|nullkey\|0\|0\|3\|off` |
+| **Ollama** | `qwen2.5:7b\|http://localhost:11434/v1/chat/completions\|nullkey\|0\|0\|3\|off` |
 | **Google Gemini** | `gemini-2.0-flash\|https://generativelanguage.googleapis.com/v1beta/openai/chat/completions\|nullkey\|0\|0\|3\|auto` |
-
-> 💡 **Recommended**: Start with `qwen-flash` on Alibaba Bailian — free credits for new users, extremely cheap and fast.
 
 ---
 
-## Supported APIs
+### Model Integration Capability
 
-| Provider | Models | Cost |
-|----------|--------|------|
-| Alibaba Bailian | qwen-flash, qwen-plus | Very low / Free tier |
-| DeepSeek | deepseek-chat, deepseek-reasoner | Very low |
-| OpenAI | gpt-4o-mini, gpt-4o | Medium |
-| Zhipu AI | glm-4-flash | Low / Free tier |
-| Google Gemini | gemini-2.0-flash | Low / Free tier |
-| Ollama | Any local model | Free |
+This system supports integration with major mainstream AI models through a unified interface, allowing on-demand access and flexible switching across cloud APIs, free tiers, and local private deployment:
 
+| Integration Mode | Supported Range |
+| --- | --- |
+| Domestic Cloud Services | Alibaba Cloud Bailian (Qwen series), DeepSeek (chat / reasoner), Zhipu AI (GLM series), and other mainstream models |
+| International Services | OpenAI (GPT series), Google Gemini, and other general-purpose models |
+| Local Deployment | Any open-source / local model via Ollama and similar frameworks |
+
+Key Features:
+
+- **Multi-provider compatibility**: A unified interface connects to mainstream models both domestically and internationally — switching providers requires no changes to business logic, making multi-model comparison and disaster-recovery migration easy.
+- **Cost-tiered selection**: Coverage ranges from free tiers and low-cost models to mid/high-end general-purpose models, so the right model can be selected based on task complexity.
+- **Flexible extensibility**: New mainstream models can be continuously onboarded — adding a provider only requires a corresponding integration configuration, with no system restructuring.
+- **Privacy control**: Local deployment supports data-stay-on-premises and offline scenarios.
 ---
 
 ## Usage Tips
 
 1. Start with small context (1-3 lines) to minimize token usage
-2. Use `qwen-flash` or `gpt-4o-mini` for the best cost/performance ratio
-3. Enable retry mode (`retry1`) for unstable network conditions
-4. Use `cache=auto` for long videos to reduce costs
-5. Try Ollama for completely free, private, offline translation
-6. Monitor token usage on your API provider's dashboard
+2. Enable retry mode (`retry1`) for unstable network conditions
+3. Use `cache=auto` for long videos to reduce costs 
 
 ---
 
@@ -126,13 +122,10 @@ Model|API_URL|nullkey|Delay_ms|Retry_mode|Context_lines|Cache_mode
 ## FAQ
 
 **Q: Is this plugin free?**
-A: The plugin is free and open-source (GPL-3.0). Cloud LLM APIs charge per token. For free usage, use [Ollama](https://ollama.com) with a local model.
-
-**Q: Which model is best for subtitle translation?**
-A: Beginners → `qwen-flash` (Alibaba Bailian). General use → `gpt-4o-mini` or `deepseek-chat`. Offline → `qwen2.5:7b` via Ollama.
+A: The plugin is free and open-source (GPL-3.0). Cloud LLM APIs charge per token.
 
 **Q: How much does it cost per movie?**
-A: A 2-hour movie has ~1,500 subtitle lines. With `qwen-flash`, less than ¥0.01. With `gpt-4o-mini`, about $0.01-0.02.
+A: A 2-hour movie has ~1,500 subtitle lines. The total cost is calculated by multiplying the line count by the per-line rate, plus any additional fees (e.g., translation, timing, or formatting) — so the final price depends on the model you choose.
 
 **Q: Can I use this with a VPN/proxy?**
 A: Yes. The plugin uses PotPlayer's built-in HTTP client which respects system proxy settings.
