@@ -31,7 +31,7 @@ A powerful AngelScript plugin for PotPlayer that provides real-time subtitle tra
    - `SubtitleTranslate - Universal.ico` - Plugin icon
 2. Place the files in your PotPlayer scripts directory:
    ```
-   PotPlayer\Extension\Subtitle\Translate
+   ~\PotPlayer\Extension\Subtitle\Translate
    ```
 3. Restart PotPlayer
 
@@ -40,7 +40,7 @@ A powerful AngelScript plugin for PotPlayer that provides real-time subtitle tra
 >    - `SubtitleTranslate - Universal.ico` - 插件图标
 > 2. 将文件放入 PotPlayer 脚本目录：
 >    ```
->    PotPlayer\Extension\Subtitle\Translate
+>    ~\PotPlayer\Extension\Subtitle\Translate
 >    ```
 > 3. 重启 PotPlayer
 
