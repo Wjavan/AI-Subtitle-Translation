@@ -1,4 +1,4 @@
-# PotPlayer AI Subtitle Translation
+<h1 align="center">PotPlayer AI Subtitle Translation</h1>
 
 <div align="center">
   <img width="256" height="256" alt="SubtitleTranslate" src="https://github.com/user-attachments/assets/0ae6c19f-d276-4a85-8a14-c4f682a75322" />
